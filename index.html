@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -62,68 +61,3 @@
         </div>
     </body>
 </html>
-=======
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="utf-8" />
-        <title>Tra cứu viết tắt</title>
-        <link rel="stylesheet" href="easy-autocomplete.min.css" />
-        <script src="jquery-1.11.2.min.js"></script>
-        <script src="jquery.easy-autocomplete.min.js"></script>
-        <script src="data.js"></script>
-        <style>
-            strong {
-                width: 100px;
-                display: inline-block;
-                margin-right: 10px;
-                border-right: 1px solid gray;
-            }
-            .wrap {
-                margin: 0 auto;
-                width: 1000px;
-                margin-top: 200px;
-            }
-            .wrap .easy-autocomplete {
-                margin: 0 auto;
-            }
-            h3 {
-                text-align: center;
-                text-transform: uppercase;
-                color: #3578e5;
-            }
-        </style>
-        <script>
-            var options = {
-                data: data,
-                getValue: 'code',
-                list: {
-                    match: {
-                        enabled: true
-                    },
-                    maxNumberOfElements: 20
-                },
-
-                template: {
-                    type: 'custom',
-                    method: function(value, item) {
-                        return '<strong>' + item.code + '</strong>' + item.name;
-                    }
-                },
-                theme: 'round'
-            };
-
-            $(function() {
-                $('#data').easyAutocomplete(options);
-            });
-        </script>
-    </head>
-
-    <body>
-        <div class="wrap">
-            <h3>Tra cứu từ viết tắt</h3>
-            <input id="data" style="width: 500px;" />
-        </div>
-    </body>
-</html>
->>>>>>> f1523f29f7291e9639fbca10ec81511bff8b334a
