@@ -7,53 +7,20 @@
         <script src="jquery-1.11.2.min.js"></script>
         <script src="jquery.easy-autocomplete.min.js"></script>
         <script src="data.js"></script>
-        <style>
-			body{
-				background: #42275a;  /* fallback for old browsers */
-				background: -webkit-linear-gradient(to right, #734b6d, #42275a);  /* Chrome 10-25, Safari 5.1-6 */
-				background: linear-gradient(to right, #734b6d, #42275a); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-			}
-            strong {
-                width: 150px;
-                display: inline-block;
-                margin-right: 10px;
-                border-right: 1px solid gray;
-            }
-            .wrap {
-                margin: 0 auto;
-                width: 1000px;
-                margin-top: 200px;
-            }
-            .wrap .easy-autocomplete {
-                margin: 0 auto;
-            }
-            h3 {
-                text-align: center;
-                text-transform: uppercase;
-            }
-        </style>
         <script>
-            var options = {
-                data: data,
-                getValue: 'code',
-                list: {
-                    match: {
-                        enabled: true
-                    },
-                    maxNumberOfElements: 20
-                },
-
-                template: {
-                    type: 'custom',
-                    method: function(value, item) {
-                        return '<strong>' + item.code + '</strong>' + item.name;
-                    }
-                },
-                theme: 'round'
-            };
-
             $(function() {
-                $('#data').easyAutocomplete(options);
+                $('#data').easyAutocomplete({
+                    data: data,
+                    getValue: 'code',
+                    list: { match: { enabled: !0 }, maxNumberOfElements: 20 },
+                    template: {
+                        type: 'custom',
+                        method: function(e, t) {
+                            return '<strong>' + t.code + '</strong>' + t.name;
+                        }
+                    },
+                    theme: 'round'
+                });
             });
         </script>
     </head>
@@ -61,7 +28,7 @@
     <body>
         <div class="wrap">
             <h3>Tra cứu từ viết tắt</h3>
-            <input id="data" style="width: 500px;" />
+            <input id="data" style="width: 450px;" />
         </div>
     </body>
 </html>
